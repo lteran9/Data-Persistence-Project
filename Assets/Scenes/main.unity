@@ -466,7 +466,7 @@ GameObject:
   - component: {fileID: 450625941}
   - component: {fileID: 450625942}
   m_Layer: 0
-  m_Name: MainManager
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -498,11 +498,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d110623a642692246a42fbc2d8d89884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BrickPrefab: {fileID: 897975713663390409, guid: 63f25b9733d2bcd4fa2ff6de1264c739, type: 3}
   LineCount: 6
   Ball: {fileID: 177912862}
   ScoreText: {fileID: 188020406}
+  BrickPrefab: {fileID: 897975713663390409, guid: 63f25b9733d2bcd4fa2ff6de1264c739, type: 3}
   GameOverText: {fileID: 474497238}
+  Scoresheet: {fileID: 11400000, guid: 8fc11b6e9812244b8afe2fa307e802b7, type: 2}
 --- !u!1 &455529321
 GameObject:
   m_ObjectHideFlags: 0
@@ -756,6 +757,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 0
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
