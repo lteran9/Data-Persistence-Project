@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.CreateWithCode.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -12,6 +13,8 @@ namespace Unity.CreateWithCode.DataPersistence
       [SerializeField] Rigidbody Ball = default;
       [SerializeField] Text ScoreText = default;
       [SerializeField] Brick BrickPrefab = default;
+      [SerializeField] Text Header = default;
+      [SerializeField] GameObject InitialText = default;
       [SerializeField] GameObject GameOverText = default;
       [SerializeField] ScoreManagerSO Scoresheet = default;
 
@@ -22,11 +25,9 @@ namespace Unity.CreateWithCode.DataPersistence
 
       public static GameManager Instance;
 
-
       private void Awake()
       {
          Instance = this;
-         DontDestroyOnLoad(gameObject);
       }
 
       // Start is called before the first frame update
@@ -46,6 +47,13 @@ namespace Unity.CreateWithCode.DataPersistence
                brick.onDestroyed.AddListener(AddPoint);
             }
          }
+
+         Debug.Log(Scoresheet);
+
+         m_UserName = Scoresheet.ActivePlayerName;
+
+         var highestScore = Scoresheet.GetHighScore();
+         Header.text = $"Best Score: {highestScore.PlayerName}: {highestScore.Score}";
       }
 
       private void Update()
@@ -54,6 +62,7 @@ namespace Unity.CreateWithCode.DataPersistence
          {
             if (Input.GetKeyDown(KeyCode.Space))
             {
+               InitialText.SetActive(false);
                m_Started = true;
                float randomDirection = Random.Range(-1.0f, 1.0f);
                Vector3 forceDir = new Vector3(randomDirection, 1, 0);
@@ -82,7 +91,7 @@ namespace Unity.CreateWithCode.DataPersistence
       {
          m_GameOver = true;
          GameOverText.SetActive(true);
-         Scoresheet.Add("", m_Points);
+         Scoresheet.Add(m_UserName, m_Points);
       }
    }
 }
