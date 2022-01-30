@@ -12,20 +12,8 @@ namespace Unity.CreateWithCode.DataPersistence
    [DefaultExecutionOrder(1000)]
    public class MenuUIHandler : MonoBehaviour
    {
-      [SerializeField] InputField Name = default;
-      [SerializeField] ScoreManagerSO Scoresheet = default;
-
-      // Start is called before the first frame update
-      void Start()
-      {
-
-      }
-
-      // Update is called once per frame
-      void Update()
-      {
-
-      }
+      [SerializeField] private InputField Name = default;
+      [SerializeField] private ScoreManagerSO Scoresheet = default;
 
       public void StartNew()
       {

@@ -1,5 +1,6 @@
 {
    "editor.formatOnSave": true,
+   "editor.fontSize": 18,
    "files.exclude": {
       "**/.DS_Store": true,
       "**/.git": true,
@@ -51,7 +52,9 @@
       "Obj/": true,
       "ProjectSettings/": true,
       "temp/": true,
-      "Temp/": true
+      "Temp/": true,
+      "Logs/": true,
+      "UserSettings/": true
    },
    "dotnet.defaultSolution": "Data-Persistence-Project.sln",
    "dotnet.preferCSharpExtension": true
