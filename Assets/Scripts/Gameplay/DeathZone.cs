@@ -7,12 +7,12 @@ namespace Unity.CreateWithCode.Gameplay
 {
    public class DeathZone : MonoBehaviour
    {
-      [SerializeField] GameManager Manager;
+      [SerializeField] private GameManager _manager;
 
       private void OnCollisionEnter(Collision other)
       {
          Destroy(other.gameObject);
-         Manager.GameOver();
+         _manager.GameOver();
       }
    }
 }

@@ -12,14 +12,14 @@ namespace Unity.CreateWithCode.DataPersistence
    [DefaultExecutionOrder(1000)]
    public class MenuUIHandler : MonoBehaviour
    {
-      [SerializeField] private InputField Name = default;
-      [SerializeField] private ScoreManagerSO Scoresheet = default;
+      [SerializeField] private InputField _name = default;
+      [SerializeField] private ScoreManagerSO _scoresheet = default;
 
       public void StartNew()
       {
-         if (!string.IsNullOrEmpty(Name.text))
+         if (!string.IsNullOrEmpty(_name.text))
          {
-            Scoresheet.ActivePlayerName = Name.text;
+            _scoresheet.ActivePlayerName = _name.text;
             SceneManager.LoadScene(1);
          }
       }

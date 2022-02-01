@@ -9,7 +9,7 @@ namespace Unity.CreateWithCode.Gameplay
    {
       private Rigidbody m_Rigidbody;
 
-      void Start()
+      private void Start()
       {
          m_Rigidbody = GetComponent<Rigidbody>();
       }

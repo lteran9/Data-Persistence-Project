@@ -6,27 +6,21 @@ namespace Unity.CreateWithCode.Gameplay
 {
    public class Paddle : MonoBehaviour
    {
-      [SerializeField] float Speed = 2.0f;
-      [SerializeField] float MaxMovement = 2.0f;
-
-      // Start is called before the first frame update
-      void Start()
-      {
-
-      }
+      [SerializeField] private float _speed = 2.0f;
+      [SerializeField] private float _maxMovement = 2.0f;
 
       // Update is called once per frame
-      void Update()
+      private void Update()
       {
          float input = Input.GetAxis("Horizontal");
 
          Vector3 pos = transform.position;
-         pos.x += input * Speed * Time.deltaTime;
+         pos.x += input * _speed * Time.deltaTime;
 
-         if (pos.x > MaxMovement)
-            pos.x = MaxMovement;
-         else if (pos.x < -MaxMovement)
-            pos.x = -MaxMovement;
+         if (pos.x > _maxMovement)
+            pos.x = _maxMovement;
+         else if (pos.x < -_maxMovement)
+            pos.x = -_maxMovement;
 
          transform.position = pos;
       }
