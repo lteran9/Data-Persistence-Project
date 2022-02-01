@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.CreateWithCode.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Unity.CreateWithCode.Gameplay.ScriptableObjects;
 
-namespace Unity.CreateWithCode.DataPersistence
+namespace Unity.CreateWithCode.Gameplay
 {
    public class GameManager : MonoBehaviour
    {

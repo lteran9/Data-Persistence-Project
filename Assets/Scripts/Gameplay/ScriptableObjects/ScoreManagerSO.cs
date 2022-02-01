@@ -1,10 +1,9 @@
 using System.Text;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
+using Unity.CreateWithCode.Gameplay;
 
-namespace Unity.CreateWithCode.ScriptableObjects
+namespace Unity.CreateWithCode.Gameplay.ScriptableObjects
 {
    [CreateAssetMenu(fileName = "Scoresheet", menuName = "GameLoop/Scores")]
    public class ScoreManagerSO : ScriptableObject
@@ -12,19 +11,6 @@ namespace Unity.CreateWithCode.ScriptableObjects
       public string ActivePlayerName = default;
 
       public List<Record> Scores = default;
-
-      [System.Serializable]
-      public struct Record
-      {
-         public int Score { get; set; }
-         public string PlayerName { get; set; }
-
-         public Record(int score, string name)
-         {
-            this.Score = score;
-            this.PlayerName = name;
-         }
-      }
 
       public void Add(string name, int score)
       {

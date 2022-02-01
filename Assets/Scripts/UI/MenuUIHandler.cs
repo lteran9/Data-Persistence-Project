@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.CreateWithCode.ScriptableObjects;
+using Unity.CreateWithCode.Gameplay.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;

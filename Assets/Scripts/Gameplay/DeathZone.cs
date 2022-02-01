@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Unity.CreateWithCode.DataPersistence
+namespace Unity.CreateWithCode.Gameplay
 {
    public class DeathZone : MonoBehaviour
    {

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Unity.CreateWithCode.DataPersistence
+namespace Unity.CreateWithCode.Gameplay
 {
    public class Brick : MonoBehaviour
    {
