@@ -9,6 +9,8 @@ namespace Unity.CreateWithCode.Gameplay
 {
    public class GameManager : MonoBehaviour
    {
+      public static GameManager Instance { get; private set; }
+
       [SerializeField] private int _lineCount = 6;
       [SerializeField] private Rigidbody _ball = default;
       [SerializeField] private Text _scoreText = default;
@@ -23,10 +25,13 @@ namespace Unity.CreateWithCode.Gameplay
       private bool m_GameOver = false;
       public string m_UserName = string.Empty;
 
-      public static GameManager Instance;
-
       private void Awake()
       {
+         if (Instance != null)
+         {
+            Destroy(Instance);
+         }
+
          Instance = this;
       }
 
